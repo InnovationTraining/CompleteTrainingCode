@@ -17,36 +17,28 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
-//    buildTypes {
-//        release {
-//            signingConfig signingConfigs.release
-//            minifyEnabled false
-//            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-//        }
-//        debug {
-//            signingConfig signingConfigs.release
-//            debuggable true
-//            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-//        }
-//    }
-//
-//    signingConfigs {
-//        release {
-//            storeFile file('Training.jks')
-//            keyAlias 'training'
-//            keyPassword '123456'
-//            storePassword '123456'
-//            v2SigningEnabled true
-//        }
-//    }
-
-    buildTypes {
+    signingConfigs {
         release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            storeFile file('Training.jks')
+            keyAlias 'training'
+            keyPassword '123456'
+            storePassword '123456'
+            v2SigningEnabled true
         }
     }
 
+    buildTypes {
+        release {
+            signingConfig signingConfigs.release
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            signingConfig signingConfigs.release
+            debuggable true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
 
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
