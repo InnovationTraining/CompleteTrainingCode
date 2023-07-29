@@ -1,0 +1,87 @@
+plugins {
+    id 'com.android.application'
+    id 'com.huawei.agconnect'
+}
+
+android {
+    namespace 'com.training.hms'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId "com.training.hms"
+        minSdk 28
+        targetSdk 34
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+//    buildTypes {
+//        release {
+//            signingConfig signingConfigs.release
+//            minifyEnabled false
+//            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+//        }
+//        debug {
+//            signingConfig signingConfigs.release
+//            debuggable true
+//            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+//        }
+//    }
+//
+//    signingConfigs {
+//        release {
+//            storeFile file('Training.jks')
+//            keyAlias 'training'
+//            keyPassword '123456'
+//            storePassword '123456'
+//            v2SigningEnabled true
+//        }
+//    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.material:material:1.9.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+
+    // 帐号服务
+    implementation 'com.huawei.hms:hwid:6.11.0.300'
+
+    // 推送服务
+    implementation 'com.huawei.hms:push:6.11.0.300'
+
+    // 应用内支付服务
+    implementation 'com.huawei.hms:iap:6.10.0.300'
+
+    // 定位服务
+    implementation 'com.huawei.hms:location:6.4.0.300'
+
+    // 安全检测服务
+    implementation 'com.huawei.hms:safetydetect:6.3.0.301'
+
+    // 机器学习服务 - 文本识别
+    implementation 'com.huawei.hms:ml-computer-vision-ocr:3.11.0.301'
+
+    // 机器学习服务 - 文档校正
+    implementation 'com.huawei.hms:ml-computer-vision-documentskew:3.11.0.301'
+
+    // 广告服务
+    implementation 'com.huawei.hms:ads-lite:13.4.62.302'
+    implementation 'com.huawei.hms:ads-consent:3.4.62.302'
+}
