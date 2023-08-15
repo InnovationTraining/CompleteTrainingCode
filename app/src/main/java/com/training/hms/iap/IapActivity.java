@@ -94,8 +94,8 @@ public class IapActivity extends AppCompatActivity {
             public void onSuccess(IsEnvReadyResult isEnvReadyResult) {
                 Toast.makeText(IapActivity.this, "支持应用内支付服务", Toast.LENGTH_SHORT).show();
                 // Consumable_01
-                productIdList.add("training_product_01");
-                productIdList.add("training_product_03");
+                productIdList.add("training_consume_01");
+                productIdList.add("training_consume_02");
                 onGetPurchases();
             }
         });
